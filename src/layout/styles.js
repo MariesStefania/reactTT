@@ -4,7 +4,10 @@ export const fade = keyframes`
   from { opacity: 1; }
   to { opacity: 0; }
 `
-
+export const fadei = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`
 export const FadeIn = styled.div`
   position: absolute;
   top: 0;
@@ -98,20 +101,26 @@ export const LeftMiddle = styled.div`
 
 export const RoomDiv = styled.div`
 width: 50vw;
-height: 100vh;
-border-style:solid;
+height: 90vh;
 margin:10px;
+margin-left:25vw;
 position: fixed;
+
 `
 
 export const TextRoom = styled.div`
+  display:flex
   border-style:solid;
-  width: 50vw;
-  margin;
-  margin-left:50vw;
+  width: 40vw;
   border-radius: 30px;
+  background-color: #fcd049;
+  align-items:center;
+
 
 `
+  // animation: ${fadei} 4s normal forwards ease-in-out;
+
+
 
 export const Screen1 = styled.div`
 height:100%;
@@ -125,12 +134,20 @@ height:100%;
 
 export const Screen2 = styled.div`
 display:flex;
-height:100%;
+height:100vh;
+margin-left:50vw;
+width: 50vw;
+border-style:solid;
+justify-content:right
 
 `
 
 export const Screen3 = styled.div`
 display:flex;
-height:100%;
+height:100vh;
+
+`
+export const ScreenBlank = styled.div`
+height:100vh;
 
 `

@@ -58,3 +58,18 @@ input[type='range']::-webkit-slider-thumb:active {
   transform: scale(1);
 }
 
+
+
+
+@keyframes fadein {
+  from {
+    from { opacity: 0; }
+  }
+
+  to { opacity: 1; }
+}
+
+.fadeSlow {
+  background-color: red;
+  animation: fadein 4s normal forwards ease-in-out;
+}

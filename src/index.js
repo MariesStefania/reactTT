@@ -12,12 +12,13 @@ import { createRoot } from 'react-dom/client'
 import { Suspense, useRef, useState ,useEffect, useLayoutEffect} from 'react'
 import './index.css'
 import Overlay from './layout/Overlay'
-import { FadeIn, LeftMiddle, RoomDiv, Screen1, Screen2, Screen3, BottomCenter, TextRoom,ScreenRoom} from './layout/styles'
+import Overlay2 from './layout/Overlay2'
+import { FadeIn, LeftMiddle, RoomDiv, Screen1, Screen2, Screen3,ScreenBlank, BottomCenter, TextRoom,ScreenRoom} from './layout/styles'
 
 import Bananas from './Bananas'
 import Room from './components/Room'
 import {gsap } from "gsap"
-import { ScrollTrigger } from 'gsap/all'
+import { ScrollTrigger} from 'gsap/all'
 // Comment the above and uncomment the following to import the WebGL BG lazily for faster loading times
 // const Bananas = lazy(() => import('./Bananas'))
 gsap.registerPlugin(ScrollTrigger)
@@ -27,19 +28,40 @@ function App() {
   const [hiddenScreen1, setHiddenScreen1] = useState(true);
   const roomRef = useRef(null);
   const screen2Ref = useRef(null);
+  const screen3Ref = useRef(null); 
+  const animationRef = useRef(null);
 
   useEffect(()=>{
     const el = roomRef.current;
     const t = screen2Ref.current;
-    gsap.to(el, {
-      x:500,
-      duration:3,
-      toggleActions: "restart reverse",
+    const t3 = screen3Ref.current;
+    const an = animationRef.current;
+    const tl = gsap.timeline({
       scrollTrigger:{
         trigger:t,
-        markers:true,
+        endTrigger:t3,
+        scrub: 1,
+        toggleActions: "restart none none none",
+        // markers:{
+        //   endColor:"black",
+        //   startColor:"black"
+        // }
       },
+    });
+    tl.to(el, {
+      x:-350,
+      
     })
+    .to(el,{
+      x:350,
+    })
+
+    ScrollTrigger.create({
+      trigger:t,
+      markers:true,
+      toggleClass: "fadeSlow"
+    })
+
   }, [])
 
 
@@ -78,11 +100,7 @@ function App() {
         <RoomDiv ref ={roomRef} >
           <Room/>
         </RoomDiv>
-        <TextRoom>
-          <div>
-            ss
-          </div>
-        </TextRoom>
+        <Overlay2/>
       </ScreenRoom>
 
     {/* <div id="ssd">ssssdf</div>
@@ -91,33 +109,96 @@ function App() {
         rerere
       </div> */}
 
-      <Screen2  >
+      <Screen2 ref={screen2Ref} >
+      <FadeIn />
+
+        <TextRoom ref={animationRef}>
+          <div>
+            <h1>
+              camera facuta cu spline
+            </h1>
+            <h1>
+              camera facuta cu spline
+            </h1>
+            <h1>
+              camera facuta cu spline
+            </h1>
+            <h1>
+              camera facuta cu spline
+            </h1>
+          </div>
+
+          <div>
+            <h1>
+              camera facuta cu spline
+            </h1>
+            <h1>
+              camera facuta cu spline
+            </h1>
+            <h1>
+              camera facuta cu spline
+            </h1>
+            <h1>
+              camera facuta cu spline
+            </h1>
+          </div>
+          
+        </TextRoom>
+      </Screen2>
+
+      <ScreenBlank  >
+        
+
+      </ScreenBlank>
+
+      <Screen3  >
         
         <TextRoom>
-          sss
-        </TextRoom>
-      </Screen2>
+        <div>
+            <h1>
+              camera facuta cu spline
+            </h1>
+            <h1 ref={screen3Ref}>
+              camera facuta cu spline
+            </h1>
+            <h1>
+              camera facuta cu spline
+            </h1>
+            <h1>
+              camera facuta cu spline
+            </h1>
+          </div>
 
-      <Screen2   className="screen3">
-        
-        <TextRoom ref={screen2Ref}>
-          sss33
+          <div>
+            <h1>
+              camera facuta cu spline
+            </h1>
+            <h1>
+              camera facuta cu spline
+            </h1>
+            <h1>
+              camera facuta cu spline
+            </h1>
+            <h1>
+              camera facuta cu spline
+            </h1>
+          </div>
         </TextRoom>
-      </Screen2>
+      </Screen3>
 
-      <Screen2  >
+      {/* <Screen3  >
         
         <TextRoom>
           sss4
         </TextRoom>
-      </Screen2>
+      </Screen3>
 
-      <Screen2  >
+      <Screen3  >
         
         <TextRoom>
           ss5
         </TextRoom>
-      </Screen2>
+      </Screen3> */}
     </>
   )
 }
