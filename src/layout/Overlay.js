@@ -1,6 +1,6 @@
 import { Container, TopLeft, BottomLeft, BottomRight, Hamburger } from './styles'
 import { VelvetBanana } from './VelvetBanana'
-
+import Switch from '../components/Switch'
 export default function Overlay() {
   return (
     <Container>
@@ -34,11 +34,12 @@ export default function Overlay() {
         Performance and time to load
         <br />
       </BottomRight> */}
-      <Hamburger>
+      {/* <Hamburger>
         <div />
         <div />
         <div />
-      </Hamburger>
+      </Hamburger> */}
+
       {/* <VelvetBanana /> */}
     </Container>
   )

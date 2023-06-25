@@ -38,6 +38,25 @@ export const TopLeft = styled.div`
   left: 5vw;
 `
 
+export const LeftText = styled.div`
+font-size: 33px;
+  position: absolute;
+
+  top: 30vw;
+  left: 7vw;
+  z-index: 1;
+`;
+
+export const RightText = styled.div`
+font-size: 20px;
+ position: absolute;
+ 
+  top: 20vw;
+  right: 13vw;
+  z-index: 1;
+`;
+
+
 export const BottomLeft = styled.div`
   position: absolute;
   bottom: 5vw;
@@ -103,8 +122,10 @@ export const RoomDiv = styled.div`
 width: 50vw;
 height: 90vh;
 margin:10px;
+margin-top:80px;
 margin-left:25vw;
 position: fixed;
+z-index: 1;
 
 `
 
@@ -115,7 +136,7 @@ export const TextRoom = styled.div`
   border-radius: 30px;
   background-color: #fcd049;
   align-items:center;
-
+  color: ${(props)=>props.theme.body};
 
 `
   // animation: ${fadei} 4s normal forwards ease-in-out;
@@ -151,3 +172,18 @@ export const ScreenBlank = styled.div`
 height:100vh;
 
 `
+
+export const DarkLightSwitch = styled.div`
+  margin:20px;
+  margin-left:90vw;
+`
+
+
+
+export const darkTheme = {
+  body: "blue"
+}
+
+export const lightTheme = {
+    body: "red"
+}

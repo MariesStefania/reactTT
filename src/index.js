@@ -13,23 +13,56 @@ import { Suspense, useRef, useState ,useEffect, useLayoutEffect} from 'react'
 import './index.css'
 import Overlay from './layout/Overlay'
 import Overlay2 from './layout/Overlay2'
-import { FadeIn, LeftMiddle, RoomDiv, Screen1, Screen2, Screen3,ScreenBlank, BottomCenter, TextRoom,ScreenRoom} from './layout/styles'
+import { FadeIn,lightTheme,darkTheme, LeftMiddle, RoomDiv, Screen1, Screen2, Screen3,ScreenBlank, BottomCenter, TextRoom,ScreenRoom, DarkLightSwitch} from './layout/styles'
+import MoonIcon from "./components/icons/MoonIcon";
+import SunIcon from "./components/icons/SunIcon";
+import Switch from "./components/Switch";
 
 import Bananas from './Bananas'
 import Room from './components/Room'
 import {gsap } from "gsap"
 import { ScrollTrigger} from 'gsap/all'
+import { ThemeProvider } from 'styled-components'
 // Comment the above and uncomment the following to import the WebGL BG lazily for faster loading times
 // const Bananas = lazy(() => import('./Bananas'))
 gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   const [speed, set] = useState(1)
-  const [hiddenScreen1, setHiddenScreen1] = useState(true);
+  const [hiddenScreen1, setHiddenScreen1] = useState(false);
+  const [theme, setTheme] = useState('light');
   const roomRef = useRef(null);
   const screen2Ref = useRef(null);
   const screen3Ref = useRef(null); 
   const animationRef = useRef(null);
+
+
+  const toggleTheme  = () =>{
+    if(theme === "dark"){
+    setTheme("light")
+    setDarkMode("light")
+    }else{
+      setTheme("dark")
+      setDarkMode("dark")
+    }
+  }
+
+
+  const setDarkMode = (mode) => {
+    if(mode == "dark")
+    {
+      console.log("darkkk")
+      // document.querySelector("body").setAttribute("background","#52451e")
+      document.body.style.backgroundColor = "#52451e"
+    }else{
+
+      console.log("lighhtt")
+
+      // document.querySelector("body").setAttribute("background","#ffd863")
+      document.body.style.backgroundColor = "#ffd863";
+
+    }
+  }
 
   useEffect(()=>{
     const el = roomRef.current;
@@ -49,11 +82,11 @@ function App() {
       },
     });
     tl.to(el, {
-      x:-350,
+      x:-400,
       
     })
     .to(el,{
-      x:350,
+      x:400,
     })
 
     ScrollTrigger.create({
@@ -68,7 +101,9 @@ function App() {
 
   return (
     <>
-    {/* {hiddenScreen1 == false ?  <Screen1 >
+    <ThemeProvider  theme= {theme=== "dark" ? darkTheme: lightTheme}>
+
+   {/* {hiddenScreen1 == false ?  <Screen1 >
       <Suspense fallback={null}>
           <Bananas speed={speed} />
           <FadeIn />
@@ -84,30 +119,38 @@ function App() {
         </BottomCenter>
     </Screen1>
    :
+} */}
       
-      <Screen2>
-        <RoomDiv>
-          <Room/>
-        </RoomDiv>
-        <TextRoom>
-          sss
-        </TextRoom>
-      </Screen2>
 
-  } */}
+   {/* <Screen1 >
+      <Suspense fallback={null}>
+          <Bananas speed={speed} />
+        </Suspense>
+        <Overlay />
+        <LeftMiddle>
+          <input type="range" min="0" max="10" value={speed} step="1" onChange={(e) => set(e.target.value)} />
+        </LeftMiddle>
+        <BottomCenter>
+          <button onClick={()=> {setHiddenScreen1(true)}}>
+            click me
+          </button>
+        </BottomCenter>
+    </Screen1> */}
 
-      <ScreenRoom>
+
+      <ScreenRoom >
         <RoomDiv ref ={roomRef} >
           <Room/>
         </RoomDiv>
         <Overlay2/>
+        <DarkLightSwitch>
+          <SunIcon />
+          <Switch toggleTheme = {toggleTheme} isDarkTheme={theme === "dark"} />
+          <MoonIcon />
+        </DarkLightSwitch>
+    
       </ScreenRoom>
 
-    {/* <div id="ssd">ssssdf</div>
-
-      <div style={{margin:"100px"}}  ref={screen2Ref}>
-        rerere
-      </div> */}
 
       <Screen2 ref={screen2Ref} >
       <FadeIn />
@@ -186,19 +229,17 @@ function App() {
         </TextRoom>
       </Screen3>
 
-      {/* <Screen3  >
+      <ScreenBlank  >
         
-        <TextRoom>
-          sss4
-        </TextRoom>
-      </Screen3>
 
-      <Screen3  >
+        </ScreenBlank>
+        <ScreenBlank  >
         
-        <TextRoom>
-          ss5
-        </TextRoom>
-      </Screen3> */}
+
+        </ScreenBlank>
+
+      </ThemeProvider>
+
     </>
   )
 }

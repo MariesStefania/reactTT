@@ -1,21 +1,25 @@
-import { Container, TopLeft, BottomLeft, BottomRight, Hamburger } from './styles'
+import { Container, TopLeft,LeftText,RightText, BottomLeft, BottomRight, Hamburger } from './styles'
 import { VelvetBanana } from './VelvetBanana'
 
 export default function Overlay2() {
   return (
     <Container>
-      <TopLeft>
+      <LeftText>
         <h2>
-          Immersive 
-          <br />
-          web apps
+          Immersive  web apps
         </h2>
         <p>Maries Stefania </p>
-      </TopLeft>
+      </LeftText>
       <BottomLeft>
         Click for more immersive Experiences
       </BottomLeft>
-   
+      
+      <RightText>
+        <h2>
+          Immersive  web apps
+        </h2>
+        <p>Maries Stefania </p>
+      </RightText>
       {/* <BottomRight>
         Inspiration and ideas
         <br />
