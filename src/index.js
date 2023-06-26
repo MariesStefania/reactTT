@@ -13,7 +13,7 @@ import { Suspense, useRef, useState ,useEffect, useLayoutEffect} from 'react'
 import './index.css'
 import Overlay from './layout/Overlay'
 import Overlay2 from './layout/Overlay2'
-import { FadeIn,lightTheme,darkTheme, LeftMiddle, RoomDiv, Screen1, Screen2, Screen3,ScreenBlank, BottomCenter, TextRoom,ScreenRoom, DarkLightSwitch} from './layout/styles'
+import { FadeIn,lightTheme,darkTheme,VideoDiv, LeftMiddle, LeftMiddleScreen2,LeftMiddleScreen3, RoomDiv, Screen1, Screen2, Screen3,ScreenBlank, BottomCenter, TextRoom,ScreenRoom, DarkLightSwitch} from './layout/styles'
 import MoonIcon from "./components/icons/MoonIcon";
 import SunIcon from "./components/icons/SunIcon";
 import Switch from "./components/Switch";
@@ -23,18 +23,22 @@ import Room from './components/Room'
 import {gsap } from "gsap"
 import { ScrollTrigger} from 'gsap/all'
 import { ThemeProvider } from 'styled-components'
+import videoEdit from "./public/Edit1.mp4"
+
 // Comment the above and uncomment the following to import the WebGL BG lazily for faster loading times
 // const Bananas = lazy(() => import('./Bananas'))
 gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   const [speed, set] = useState(1)
+  const [fontSize, setFontSize] = useState(40);
   const [hiddenScreen1, setHiddenScreen1] = useState(false);
   const [theme, setTheme] = useState('light');
   const roomRef = useRef(null);
   const screen2Ref = useRef(null);
   const screen3Ref = useRef(null); 
   const animationRef = useRef(null);
+  const animation2Ref = useRef(null);
 
 
   const toggleTheme  = () =>{
@@ -98,6 +102,29 @@ function App() {
   }, [])
 
 
+  useEffect(()=>{
+    const an = animationRef.current
+    const an2 = animation2Ref.current
+    gsap.to(an,{
+      scrollTrigger:{
+        trigger:an,
+        toggleClass: "show",
+        start:"top 50%",
+        end: "top -10%",
+        markers:true
+      }
+    })
+    gsap.to(an2,{
+      scrollTrigger:{
+        trigger:an2,
+        toggleClass: "show",
+        start:"top 50%",
+        end: "top -10%",
+        markers:true
+      }
+    })
+
+  },[])
 
   return (
     <>
@@ -140,7 +167,7 @@ function App() {
 
       <ScreenRoom >
         <RoomDiv ref ={roomRef} >
-          <Room/>
+          {/* <Room/> */}
         </RoomDiv>
         <Overlay2/>
         <DarkLightSwitch>
@@ -153,12 +180,12 @@ function App() {
 
 
       <Screen2 ref={screen2Ref} >
-      <FadeIn />
 
-        <TextRoom ref={animationRef}>
+        <TextRoom ref={animationRef} className="textShow">
+        <LeftMiddleScreen2>
+          <input type="range" min="0" max="10" value={fontSize} step="1" onChange={(e) => setFontSize(e.target.value)} />
+        </LeftMiddleScreen2>
           <div>
-
-   
             <h1>
               camera facuta cu spline
             </h1>
@@ -187,10 +214,13 @@ function App() {
 
       <Screen3  >
         
-        <TextRoom>
+        <TextRoom ref={animation2Ref} className="textShow">
+        <LeftMiddleScreen3>
+          <input type="range" min="40" max="100" value={fontSize} step="10" onChange={(e) => setFontSize(e.target.value)} />
+        </LeftMiddleScreen3>
         <div>
-            <h1>
-              camera facuta cu spline
+            <h1 style={{"font-size":`${fontSize}px`}} >
+              camera facuta cu spline111
             </h1>
             <h1 ref={screen3Ref}>
               camera facuta cu spline
@@ -213,6 +243,13 @@ function App() {
         </ScreenBlank>
         <ScreenBlank  >
         
+
+        </ScreenBlank>
+
+        <ScreenBlank  >
+          <VideoDiv>
+            <video src={videoEdit} autoPlay loop muted/>
+          </VideoDiv>
 
         </ScreenBlank>
 

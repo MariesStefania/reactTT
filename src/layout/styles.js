@@ -121,6 +121,31 @@ export const LeftMiddle = styled.div`
   transform-origin: 100% 50%;
 `
 
+export const LeftMiddleScreen2 = styled.div`
+  position: absolute;
+  bottom: -40%;
+  right: 5vw;
+  font-family: 'Inter';
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: -0.01em;
+  font-size: 12px;
+  transform: rotate(90deg) translate3d(50%, 0, 0);
+  transform-origin: 100% 50%;
+`
+
+export const LeftMiddleScreen3 = styled.div`
+  position: absolute;
+  bottom: -240%;
+  font-family: 'Inter';
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: -0.01em;
+  font-size: 12px;
+  transform: rotate(90deg) translate3d(50%, 0, 0);
+  transform-origin: 100% 50%;
+`
+
 export const RoomDiv = styled.div`
 width: 50vw;
 height: 90vh;
@@ -200,3 +225,7 @@ export const lightTheme = {
     text: "#565656",
     backgroundTxt: '#e6c3ae',
 }
+
+export const VideoDiv = styled.div`
+  margin-top:600px;
+`
