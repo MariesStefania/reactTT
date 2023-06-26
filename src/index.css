@@ -18,15 +18,15 @@ html::-webkit-scrollbar{
   width: 0.5vw;
 }
 html::-webkit-scrollbar-thumb{
-  background-color: #febf00;
+  background-color: #ecd2c1;
 }
 
 html::-webkit-scrollbar-track{
-  background-color: #ffd863;
+  background-color: #E0B59A;
 }
 
 body {
-  background: #ffd863;
+  background: #E0B59A;
 }
 
 a {
@@ -70,6 +70,6 @@ input[type='range']::-webkit-slider-thumb:active {
 }
 
 .fadeSlow {
-  background-color: red;
+  /* background-color: red; */
   animation: fadein 4s normal forwards ease-in-out;
 }

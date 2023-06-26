@@ -52,14 +52,14 @@ function App() {
     if(mode == "dark")
     {
       console.log("darkkk")
-      // document.querySelector("body").setAttribute("background","#52451e")
-      document.body.style.backgroundColor = "#52451e"
+      // document.querySelector("body").setAttribute("background","#426177")
+      document.body.style.backgroundColor = "#426177"
     }else{
 
       console.log("lighhtt")
 
-      // document.querySelector("body").setAttribute("background","#ffd863")
-      document.body.style.backgroundColor = "#ffd863";
+      // document.querySelector("body").setAttribute("background","#E0B59A")
+      document.body.style.backgroundColor = "#E0B59A";
 
     }
   }
@@ -157,21 +157,8 @@ function App() {
 
         <TextRoom ref={animationRef}>
           <div>
-            <h1>
-              camera facuta cu spline
-            </h1>
-            <h1>
-              camera facuta cu spline
-            </h1>
-            <h1>
-              camera facuta cu spline
-            </h1>
-            <h1>
-              camera facuta cu spline
-            </h1>
-          </div>
 
-          <div>
+   
             <h1>
               camera facuta cu spline
             </h1>
@@ -184,8 +171,12 @@ function App() {
             <h1>
               camera facuta cu spline
             </h1>
-          </div>
-          
+
+            <h1>
+              camera facuta cu spline
+            </h1>
+       
+            </div>
         </TextRoom>
       </Screen2>
 
@@ -212,20 +203,7 @@ function App() {
             </h1>
           </div>
 
-          <div>
-            <h1>
-              camera facuta cu spline
-            </h1>
-            <h1>
-              camera facuta cu spline
-            </h1>
-            <h1>
-              camera facuta cu spline
-            </h1>
-            <h1>
-              camera facuta cu spline
-            </h1>
-          </div>
+      
         </TextRoom>
       </Screen3>
 

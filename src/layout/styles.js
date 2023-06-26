@@ -8,6 +8,7 @@ export const fadei = keyframes`
   from { opacity: 0; }
   to { opacity: 1; }
 `
+
 export const FadeIn = styled.div`
   position: absolute;
   top: 0;
@@ -36,11 +37,13 @@ export const TopLeft = styled.div`
   position: absolute;
   top: 5vw;
   left: 5vw;
+
 `
 
 export const LeftText = styled.div`
 font-size: 33px;
   position: absolute;
+  
 
   top: 30vw;
   left: 7vw;
@@ -100,7 +103,7 @@ export const Hamburger = styled.div`
     position: relative;
     width: 24px;
     height: 2px;
-    background: #252525;
+    background: #E0B59A;
     margin-bottom: 6px;
   }
 `
@@ -130,13 +133,21 @@ z-index: 1;
 `
 
 export const TextRoom = styled.div`
-  display:flex
-  border-style:solid;
-  width: 40vw;
+  // border-style:solid;
+  width: 50vw;
+
   border-radius: 30px;
-  background-color: #fcd049;
-  align-items:center;
-  color: ${(props)=>props.theme.body};
+  background-color: ${(props)=>props.theme.backgroundTxt};
+  color: ${(props)=>props.theme.text};
+  text-align:center;
+  
+  & h1 {
+    color: '#565656';
+  }
+  & div{
+    border-style:solid;
+    margin-top:250px;
+  }
 
 `
   // animation: ${fadei} 4s normal forwards ease-in-out;
@@ -158,14 +169,15 @@ display:flex;
 height:100vh;
 margin-left:50vw;
 width: 50vw;
-border-style:solid;
-justify-content:right
+// border-style:solid;
+justify-content:right;
 
 `
 
 export const Screen3 = styled.div`
 display:flex;
 height:100vh;
+
 
 `
 export const ScreenBlank = styled.div`
@@ -181,9 +193,10 @@ export const DarkLightSwitch = styled.div`
 
 
 export const darkTheme = {
-  body: "blue"
+  text: "blue"
 }
 
 export const lightTheme = {
-    body: "red"
+    text: "#565656",
+    backgroundTxt: '#e6c3ae',
 }
