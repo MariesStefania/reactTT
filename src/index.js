@@ -57,13 +57,13 @@ function App() {
     {
       console.log("darkkk")
       // document.querySelector("body").setAttribute("background","#426177")
-      document.body.style.backgroundColor = "#426177"
+      document.body.style.backgroundColor = "#1f1826"
     }else{
 
       console.log("lighhtt")
 
       // document.querySelector("body").setAttribute("background","#E0B59A")
-      document.body.style.backgroundColor = "#E0B59A";
+      document.body.style.backgroundColor = "#E3DAC9";
 
     }
   }

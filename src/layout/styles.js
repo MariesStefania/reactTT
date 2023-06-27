@@ -218,12 +218,14 @@ export const DarkLightSwitch = styled.div`
 
 
 export const darkTheme = {
-  text: "blue"
+  text: "#F7EFE6",
+  backgroundTxt: '#2b2235'
+
 }
 
 export const lightTheme = {
-    text: "#565656",
-    backgroundTxt: '#e6c3ae',
+    text: "#2b2235",
+    backgroundTxt: '#F7EFE6',
 }
 
 export const VideoDiv = styled.div`
