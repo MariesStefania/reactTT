@@ -123,8 +123,8 @@ export const LeftMiddle = styled.div`
 
 export const LeftMiddleScreen2 = styled.div`
   position: absolute;
-  bottom: -40%;
-  right: 5vw;
+  bottom: -35%;
+  right: 1vw;
   font-family: 'Inter';
   font-weight: 400;
   line-height: 1em;
@@ -137,6 +137,7 @@ export const LeftMiddleScreen2 = styled.div`
 export const LeftMiddleScreen3 = styled.div`
   position: absolute;
   bottom: -240%;
+  left: -6vw;
   font-family: 'Inter';
   font-weight: 400;
   line-height: 1em;
@@ -170,7 +171,8 @@ export const TextRoom = styled.div`
     color: '#565656';
   }
   & div{
-    border-style:solid;
+    // border-style:solid;
+    // margin-left:40px;
     margin-top:250px;
   }
 
@@ -230,4 +232,18 @@ export const lightTheme = {
 
 export const VideoDiv = styled.div`
   margin-top:600px;
+`
+
+export const Textp = styled.p`
+font-family: 'Ayer Poster', serif;
+color:red;
+
+`
+
+export const TextScreen3 = styled.div`
+  margin-left:40px;
+`
+
+export const TextScreen2 = styled.div`
+  margin-right:40px;
 `

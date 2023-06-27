@@ -13,7 +13,7 @@ import { Suspense, useRef, useState ,useEffect, useLayoutEffect} from 'react'
 import './index.css'
 import Overlay from './layout/Overlay'
 import Overlay2 from './layout/Overlay2'
-import { FadeIn,lightTheme,darkTheme,VideoDiv, LeftMiddle, LeftMiddleScreen2,LeftMiddleScreen3, RoomDiv, Screen1, Screen2, Screen3,ScreenBlank, BottomCenter, TextRoom,ScreenRoom, DarkLightSwitch} from './layout/styles'
+import { FadeIn,lightTheme,darkTheme,VideoDiv, LeftMiddle,TextScreen3,TextScreen2, LeftMiddleScreen2,LeftMiddleScreen3, RoomDiv, Screen1, Screen2, Screen3,ScreenBlank, BottomCenter, TextRoom,ScreenRoom, DarkLightSwitch} from './layout/styles'
 import MoonIcon from "./components/icons/MoonIcon";
 import SunIcon from "./components/icons/SunIcon";
 import Switch from "./components/Switch";
@@ -32,6 +32,8 @@ gsap.registerPlugin(ScrollTrigger)
 function App() {
   const [speed, set] = useState(1)
   const [fontSize, setFontSize] = useState(40);
+  const [fontSize2, setFontSize2] = useState(40);
+
   const [hiddenScreen1, setHiddenScreen1] = useState(false);
   const [theme, setTheme] = useState('light');
   const roomRef = useRef(null);
@@ -86,11 +88,11 @@ function App() {
       },
     });
     tl.to(el, {
-      x:-400,
+      x:-500,
       
     })
     .to(el,{
-      x:400,
+      x:500,
     })
 
     ScrollTrigger.create({
@@ -149,7 +151,7 @@ function App() {
 } */}
       
 
-   {/* <Screen1 >
+   <Screen1 >
       <Suspense fallback={null}>
           <Bananas speed={speed} />
         </Suspense>
@@ -158,16 +160,16 @@ function App() {
           <input type="range" min="0" max="10" value={speed} step="1" onChange={(e) => set(e.target.value)} />
         </LeftMiddle>
         <BottomCenter>
-          <button onClick={()=> {setHiddenScreen1(true)}}>
-            click me
-          </button>
+          <a   href ={"https://localhost:3001"}>
+            click for more immersive experiences
+          </a>
         </BottomCenter>
-    </Screen1> */}
+    </Screen1>
 
 
-      <ScreenRoom >
+      {/* <ScreenRoom >
         <RoomDiv ref ={roomRef} >
-          {/* <Room/> */}
+          <Room/>
         </RoomDiv>
         <Overlay2/>
         <DarkLightSwitch>
@@ -183,27 +185,15 @@ function App() {
 
         <TextRoom ref={animationRef} className="textShow">
         <LeftMiddleScreen2>
-          <input type="range" min="0" max="10" value={fontSize} step="1" onChange={(e) => setFontSize(e.target.value)} />
+        <input type="range" min="40" max="100" value={fontSize2} step="10" onChange={(e) => setFontSize2(e.target.value)} />
         </LeftMiddleScreen2>
-          <div>
-            <h1>
-              camera facuta cu spline
+          <TextScreen2>
+            <h1 style={{"font-size":`${fontSize2}px`}} >
+              Spline ne da posibilitatea sa modelam elemente si sa generam medii imersive.
             </h1>
-            <h1>
-              camera facuta cu spline
-            </h1>
-            <h1>
-              camera facuta cu spline
-            </h1>
-            <h1>
-              camera facuta cu spline
-            </h1>
-
-            <h1>
-              camera facuta cu spline
-            </h1>
+            
        
-            </div>
+            </TextScreen2>
         </TextRoom>
       </Screen2>
 
@@ -218,20 +208,15 @@ function App() {
         <LeftMiddleScreen3>
           <input type="range" min="40" max="100" value={fontSize} step="10" onChange={(e) => setFontSize(e.target.value)} />
         </LeftMiddleScreen3>
-        <div>
-            <h1 style={{"font-size":`${fontSize}px`}} >
-              camera facuta cu spline111
+        <TextScreen3>
+            <h1 style={{"font-size":`${fontSize}px`}} ref={screen3Ref}>
+            Spline ne da posibilitatea sa modelam elemente si sa generam medii imersive.
             </h1>
-            <h1 ref={screen3Ref}>
+            <h1 >
               camera facuta cu spline
             </h1>
-            <h1>
-              camera facuta cu spline
-            </h1>
-            <h1>
-              camera facuta cu spline
-            </h1>
-          </div>
+
+          </TextScreen3>
 
       
         </TextRoom>
@@ -251,7 +236,7 @@ function App() {
             <video src={videoEdit} autoPlay loop muted/>
           </VideoDiv>
 
-        </ScreenBlank>
+        </ScreenBlank> */}
 
       </ThemeProvider>
 

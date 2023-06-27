@@ -59,29 +59,29 @@ function Banana({ index, z, speed }) {
 
       <mesh >
     <Sphere     >
-   <meshStandardMaterial color="#ff9f00" />
+   <meshStandardMaterial color="#E0B59A" />
   </Sphere>
     </mesh>
 
     <mesh >
     <Sphere     >
-   <meshStandardMaterial color="#ff9f00" />
+   <meshStandardMaterial color="#E0B59A" />
   </Sphere>
     </mesh>
 
     <mesh >
     <Sphere     >
-   <meshStandardMaterial color="#ff9f00" />
+   <meshStandardMaterial color="#E0B59A" />
   </Sphere>
     </mesh>
 
     <mesh >
     <Sphere     >
-   <meshStandardMaterial color="#ff9f00" />
+   <meshStandardMaterial color="#E0B59A" />
   </Sphere>
     </mesh>
 
-  
+  {/* sphere: ff9f00  bk: ffbf40    */}
 
     </Detailed>
   )
@@ -93,7 +93,7 @@ export default function Bananas({ speed = 1, count = 80, depth = 80, easing = (x
     <Canvas gl={{ antialias: false }} dpr={[1, 1.5]} camera={{ position: [0, 0, 10], fov: 20, near: 0.01, far: depth + 15 }}>
     {/* <OrbitControls enableZoom={false}/> */}
 
-      <color attach="background" args={['#ffbf40']} />
+      <color attach="background" args={['#E0B59A']} />
       <spotLight position={[10, 20, 10]} penumbra={1} intensity={1} color="orange" />
       {/* Using cubic easing here to spread out objects a little more interestingly, i wanted a sole big object up front ... */}
       {Array.from({ length: count }, (_, i) => <Banana key={i} index={i} z={Math.round(easing(i / count) * depth)} speed={speed} /> /* prettier-ignore */)}
