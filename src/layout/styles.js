@@ -23,6 +23,7 @@ export const FadeIn = styled.div`
 export const Container = styled.div`
   font-family: 'Inter';
   font-size: 16px;
+  color: ${(props)=>props.theme.text};
   & h1 {
     padding: 0;
     margin: 0 0 0.05em 0;
@@ -82,16 +83,36 @@ export const BottomRight = styled.div`
 export const BottomCenter = styled.div`
   position: absolute;
   bottom: 5vw;
-  right: 50vw;
-  width: 35ch;
+  right: 40vw;
   max-width: 40%;
   line-height: 1em;
   letter-spacing: -0.01em;
   text-align: right;
+  border-style:solid;
+  padding:20px;
+  border-radius:40px;
+  font-size:20px;
+`
+export const FlexRight = styled.div`
+  display:flex;
+  margin-bottom:-20px;
 `
 
+export const SplineImg = styled.img`
+  width: 50px;
+  margin-top:15px;
+  margin-left:15px;
+`
 
+export const ScrollImg = styled.img`
+  position: absolute;
+  width: 50px;
+  margin-top:15px;
+  margin-left:15px;
+  bottom: 2.5vw;
+  right: 49vw;
 
+`
 
 export const Hamburger = styled.div`
   position: absolute;
@@ -220,13 +241,13 @@ export const DarkLightSwitch = styled.div`
 
 
 export const darkTheme = {
-  text: "#F7EFE6",
+  text: "#E3DAC9",
   backgroundTxt: '#2b2235'
 
 }
 
 export const lightTheme = {
-    text: "#2b2235",
+    text: "#1f1826",
     backgroundTxt: '#F7EFE6',
 }
 
@@ -247,3 +268,4 @@ export const TextScreen3 = styled.div`
 export const TextScreen2 = styled.div`
   margin-right:40px;
 `
+

@@ -59,7 +59,10 @@ input[type='range']::-webkit-slider-thumb:active {
 }
 
 
-
+::selection{
+  background-color:black;
+  color:#E0B59A;
+}
 
 @keyframes fadein {
   from {
@@ -87,4 +90,43 @@ input[type='range']::-webkit-slider-thumb:active {
   width: 1000px;
   height: 1000px;
   border-style: solid;
+}
+
+.wavy{
+  position:relative;
+  margin-top: 10vh;
+  width:500px;
+  height: 980px;
+  overflow: hidden;
+  /* background-color:rgb(60, 0, 255); */
+}
+
+.wavy::before{
+
+  content:"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+  color:transparent;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  position: absolute;
+  top:10px;
+  left:350px;
+  font-size: 5em;
+  
+  text-decoration-style:wavy;
+  text-decoration-color:#E0B59A;
+  text-decoration-line: underline;
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate
+{
+  0%
+  {
+    transform: translateY(-1px);
+  }
+  100%
+  {
+    transform: translateY(-200px);
+
+  }
 }

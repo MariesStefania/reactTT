@@ -1,6 +1,8 @@
 import { Container, TopLeft,LeftText,RightText, BottomLeft, BottomRight, Hamburger } from './styles'
 import { VelvetBanana } from './VelvetBanana'
-
+import splineLogo from "../public/splineLogo.png"
+import scroll2 from "../public/scroll2.png"
+import { SplineImg, FlexRight,BottomCenter,ScrollImg} from './styles'
 export default function Overlay2() {
   return (
     <Container>
@@ -10,15 +12,23 @@ export default function Overlay2() {
         </h2>
         <p>Maries Stefania </p>
       </LeftText>
-      <BottomLeft>
-        Click for more immersive Experiences
-      </BottomLeft>
-      
+      <BottomCenter>
+       Scroll for more immersive Experiences
+      </BottomCenter>
+      <ScrollImg src={scroll2}></ScrollImg>
+
       <RightText>
-        <h2>
-          Immersive  web apps
-        </h2>
-        <p>Maries Stefania </p>
+        <FlexRight>
+          <div>
+            <h2>
+              Interactive room desgin
+            </h2>
+          </div>
+          <div>
+            <SplineImg src={splineLogo} ></SplineImg>
+          </div>
+        </FlexRight>
+        <p>spline 3d model</p>
       </RightText>
       {/* <BottomRight>
         Inspiration and ideas

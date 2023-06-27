@@ -12,9 +12,9 @@ export default function Overlay() {
         </h1>
         <p>Maries Stefania </p>
       </TopLeft>
-      <BottomLeft>
+      {/* <BottomLeft>
         Click for more immersive Experiences
-      </BottomLeft>
+      </BottomLeft> */}
    
       {/* <BottomRight>
         Inspiration and ideas
