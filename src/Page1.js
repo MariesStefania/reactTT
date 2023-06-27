@@ -6,7 +6,7 @@ import Overlay from './layout/Overlay'
 import {  LeftMiddle, Screen1, BottomCenter,} from './layout/styles'
 
 
-import Bananas from './Bananas'
+import Bulele from './Bulele'
 
 export default function Page1() {
     const [speed, set] = useState(1)
@@ -14,7 +14,7 @@ export default function Page1() {
     return (
     <Screen1 >
     <Suspense fallback={null}>
-        <Bananas speed={speed} />
+        <Bulele speed={speed} />
       </Suspense>
       <Overlay />
       <LeftMiddle>
