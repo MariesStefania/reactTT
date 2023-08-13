@@ -93,6 +93,19 @@ export const BottomCenter = styled.div`
   border-radius:40px;
   font-size:20px;
 `
+export const BottomCenterV2 = styled.div`
+  position: absolute;
+  bottom: 1vw;
+  right: 40vw;
+  max-width: 40%;
+  line-height: 1em;
+  letter-spacing: -0.01em;
+  text-align: right;
+  border-style:solid;
+  padding:20px;
+  border-radius:40px;
+  font-size:20px;
+`
 export const FlexRight = styled.div`
   display:flex;
   margin-bottom:-20px;
