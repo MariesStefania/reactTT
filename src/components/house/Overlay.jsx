@@ -12,7 +12,7 @@ const Section = (props) => {
     >
       <div  style={{"margin-right":"800px"}}>
         <div >
-          <div style={{"background":"white"}}>
+          <div style={{"background":"#F7EFE6"}}>
             {props.children}
           </div>
         </div>
@@ -33,7 +33,7 @@ const Section2 = (props) => {
     >
       <div  style={{"margin-left":"800px"}}>
         <div >
-          <div style={{"background":"white"}}>
+          <div style={{"background":"#F7EFE6"}}>
             {props.children}
           </div>
         </div>
@@ -54,7 +54,7 @@ const Section3 = (props) => {
     >
       <div style={{"margin-right":"800px"}}>
         <div >
-          <div style={{"background":"white"}}>
+          <div style={{"background":"#F7EFE6"}}>
             {props.children}
           </div>
         </div>
