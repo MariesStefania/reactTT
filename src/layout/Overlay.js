@@ -5,11 +5,11 @@ export default function Overlay() {
     <Container>
       <TopLeft>
         <h1>
-          Immersive 
+        Aplicatii  
           <br />
-          web apps
+        web imersive
         </h1>
-        <p>Maries Stefania </p>
+        <p>Revolutionarea aplicatiilor web folosind medii imersive  </p>
       </TopLeft>
       {/* <BottomLeft>
         Click for more immersive Experiences

@@ -9,7 +9,7 @@ import {gsap } from "gsap"
 import { ScrollTrigger} from 'gsap/all'
 import { ThemeProvider } from 'styled-components'
 
-import { Experience } from "./components/home/Experience";
+import { Experience } from "./components/house/Experience";
 
 gsap.registerPlugin(ScrollTrigger)
 

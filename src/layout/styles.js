@@ -47,7 +47,7 @@ font-size: 33px;
   
 
   top: 30vw;
-  left: 7vw;
+  left: 5vw;
   z-index: 1;
 `;
 
@@ -56,7 +56,7 @@ font-size: 20px;
  position: absolute;
  
   top: 20vw;
-  right: 13vw;
+  right: 6vw;
   z-index: 1;
 `;
 
@@ -82,7 +82,7 @@ export const BottomRight = styled.div`
 
 export const BottomCenter = styled.div`
   position: absolute;
-  bottom: 5vw;
+  bottom: 8vw;
   right: 40vw;
   max-width: 40%;
   line-height: 1em;
@@ -95,7 +95,7 @@ export const BottomCenter = styled.div`
 `
 export const BottomCenterV2 = styled.div`
   position: absolute;
-  bottom: 1vw;
+  bottom: 3vw;
   right: 40vw;
   max-width: 40%;
   line-height: 1em;

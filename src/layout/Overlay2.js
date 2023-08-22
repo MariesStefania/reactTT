@@ -7,12 +7,12 @@ export default function Overlay2() {
     <Container>
       <LeftText>
         <h2>
-          Immersive  web apps
+          Aplicatii web imersive
         </h2>
-        <p>Maries Stefania </p>
+        <p>Revolutionarea aplicatiilor web folosind medii imersive </p>
       </LeftText>
       <BottomCenter>
-       Scroll for more immersive Experiences
+       Scroll pentru mai multe experiente !!
       </BottomCenter>
       <ScrollImg src={scroll2}></ScrollImg>
 
@@ -20,14 +20,14 @@ export default function Overlay2() {
         <FlexRight>
           <div>
             <h2>
-              Interactive room desgin
+              Design interactiv al camerei
             </h2>
           </div>
           <div>
             <SplineImg src={splineLogo} ></SplineImg>
           </div>
         </FlexRight>
-        <p>spline 3d model</p>
+        <p>Model 3d spline</p>
       </RightText>
 
     </Container>
