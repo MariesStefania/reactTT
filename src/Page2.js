@@ -176,7 +176,7 @@ export default function Page2() {
         </TextRoom>
       </Screen3>
 
-      <ScreenBlank  >
+      {/* <ScreenBlank  >
         
       <div style={{"display":"flex"}}>
         <div class="wavy"></div>
@@ -194,7 +194,7 @@ export default function Page2() {
             <video src={videoEdit} autoPlay loop muted/>
           </VideoDiv>
 
-        </ScreenBlank>
+        </ScreenBlank> */}
     </ThemeProvider>
 )
 }

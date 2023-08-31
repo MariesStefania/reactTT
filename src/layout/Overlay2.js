@@ -1,35 +1,44 @@
-import { Container, TopLeft,LeftText,RightText, BottomLeft, BottomRight, Hamburger } from './styles'
-import splineLogo from "../public/splineLogo.png"
-import scroll2 from "../public/scroll2.png"
-import { SplineImg, FlexRight,BottomCenter,ScrollImg} from './styles'
+import {
+  Container,
+  TopLeft,
+  LeftText,
+  RightText,
+  BottomLeft,
+  BottomRight,
+  Hamburger,
+} from "./styles";
+import splineLogo from "../public/splineLogo.png";
+import scroll2 from "../public/scroll2.png";
+import {
+  SplineImg,
+  FlexRight,
+  BottomCenter,
+  ScrollImg,
+  BottomCenterScroll,
+} from "./styles";
 export default function Overlay2() {
   return (
     <Container>
       <LeftText>
-        <h2>
-          Immersive  web apps
-        </h2>
-        <p>Maries Stefania </p>
+        <h2>Aplicatii web imersive</h2>
+        <p>Revolutionarea aplicatiilor web folosind medii imersive </p>
       </LeftText>
-      <BottomCenter>
-       Scroll for more immersive Experiences
-      </BottomCenter>
+      <BottomCenterScroll>
+        Scroll pentru mai multe experiente !!
+      </BottomCenterScroll>
       <ScrollImg src={scroll2}></ScrollImg>
 
       <RightText>
         <FlexRight>
           <div>
-            <h2>
-              Interactive room desgin
-            </h2>
+            <h2>Design interactiv al camerei</h2>
           </div>
           <div>
-            <SplineImg src={splineLogo} ></SplineImg>
+            <SplineImg src={splineLogo}></SplineImg>
           </div>
         </FlexRight>
-        <p>spline 3d model</p>
+        <p>Model 3d spline</p>
       </RightText>
-
     </Container>
-  )
+  );
 }
