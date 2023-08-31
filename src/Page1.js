@@ -21,11 +21,11 @@ export default function Page1() {
         <input type="range" min="0" max="10" value={speed} step="1" onChange={(e) => set(e.target.value)} />
       </LeftMiddle>
       <BottomCenter>
-        <a   href ={"http://localhost:3000/spline"}>click pentru experienta imersiva 1</a> 
+        <a   href ={"https://react-tt.vercel.app/spline"}>click pentru experienta imersiva 1</a> 
 
       </BottomCenter>
       <BottomCenterV2  >
-      <a  href ={"http://localhost:3000/house"}>click pentru experienta imersiva 2</a>
+      <a  href ={"https://react-tt.vercel.app/house"}>click pentru experienta imersiva 2</a>
       </BottomCenterV2>
 
   </Screen1>
